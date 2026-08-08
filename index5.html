@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ติดต่อผู้จัดทำ - เว็บไซต์แนะนำการออกกำลังกายและสุขภาพ</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Sarabun', sans-serif; }
+        body { background-color: #f4f6f9; color: #333; line-height: 1.6; }
+        .container { width: 92%; max-width: 1300px; margin: 0 auto; }
+        header { background-color: #ffffff; padding: 20px 0; border-bottom: 2px solid #e0e0e0; }
+        .header-content { display: flex; align-items: center; gap: 20px; }
+        .logo-img { width: 85px; height: 85px; object-fit: contain; border-radius: 50%; flex-shrink: 0; }
+        .header-title h1 { font-size: 1.8rem; color: #007bff; margin-bottom: 5px; }
+        .header-title p { color: #666; font-size: 0.95rem; }
+        nav { background-color: #007bff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .nav-menu { list-style: none; display: flex; flex-wrap: wrap; }
+        .nav-menu li a { display: block; padding: 12px 20px; color: white; text-decoration: none; font-weight: 500; }
+        .nav-menu li a:hover, .nav-menu li a.active { background-color: #0056b3; }
+        .main-layout { margin: 25px auto; }
+        main { width: 100%; }
+        .page-title { background-color: white; padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #007bff; font-weight: bold; font-size: 1.2rem; }
+        .contact-card { background-color: white; border-radius: 10px; padding: 30px; margin-bottom: 20px; border-top: 3px solid #007bff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .contact-card h3 { color: #007bff; margin-bottom: 20px; font-size: 1.3rem; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .contact-info { list-style: none; font-size: 1.05rem; color: #444; }
+        .contact-info li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 10px; }
+        .contact-info strong { color: #333; width: 120px; flex-shrink: 0; }
+        .team-list { list-style: none; padding-left: 0; }
+        .team-list li { margin-bottom: 5px; }
+        footer { background-color: #333; color: white; text-align: center; padding: 18px 0; margin-top: 40px; }
+
+        /* รองรับจอมือถือ */
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; text-align: center; }
+            .nav-menu { flex-direction: column; }
+            .nav-menu li a { text-align: center; }
+            .contact-info li { flex-direction: column; gap: 5px; }
+            .contact-info strong { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <img src="logo.png" alt="Logo" class="logo-img">
+            <div class="header-title">
+                <h1>เว็บไซต์แนะนำการออกกำลังกายและสุขภาพ</h1>
+                <p>รวมเคล็ดลับการออกกำลังกาย โปรแกรมฝึก และโภชนาการเพื่อสุขภาพที่ดี</p>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="index.html">หน้าแรก (Home)</a></li>
+                <li><a href="index2.html">ความรู้เกี่ยวกับการออกกำลังกาย</a></li>
+                <li><a href="index3.html">โปรแกรมการออกกำลังกาย</a></li>
+                <li><a href="index4.html">โภชนาการเพื่อสุขภาพ</a></li>
+                <li><a href="index5.html" class="active">ติดต่อผู้จัดทำ</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container main-layout">
+        <main>
+            <div class="page-title">📞 ติดต่อผู้จัดทำเว็บไซต์</div>
+            <div class="contact-card">
+                <h3>ข้อมูลผู้จัดทำ</h3>
+                <ul class="contact-info">
+                    <li>
+                        <strong>ผู้จัดทำ:</strong>
+                        <ol class="team-list" style="padding-left: 20px;">
+                            <li>นายรัฐศาสตร์ คอกสี</li>
+                            <li>นายปัณณทัต สุขเกษม</li>
+                            <li>นายนภัสกร ยอดวัน</li>
+                        </ol>
+                    </li>
+                    <li><strong>เบอร์โทรศัพท์:</strong> 094-771-9909</li>
+                    <li><strong>อีเมล:</strong> rattasaatkoksri@gmail.com</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 เว็บไซต์ออกกำลังกายเพื่อสุขภาพ | จัดทำโดย คณะผู้จัดทำ</p>
+        </div>
+    </footer>
+</body>
+</html>
