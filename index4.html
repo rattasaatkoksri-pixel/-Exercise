@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โภชนาการ&คำนวณ BMI - เว็บไซต์แนะนำการออกกำลังกายและสุขภาพ</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Sarabun', sans-serif; }
+        body { background-color: #f4f6f9; color: #333; line-height: 1.6; }
+        .container { width: 92%; max-width: 1300px; margin: 0 auto; }
+        
+        /* Header */
+        header { background-color: #ffffff; padding: 20px 0; border-bottom: 2px solid #e0e0e0; }
+        .header-content { display: flex; align-items: center; gap: 20px; }
+        .logo-img { width: 85px; height: 85px; object-fit: contain; border-radius: 50%; flex-shrink: 0; }
+        .header-title h1 { font-size: 1.8rem; color: #007bff; margin-bottom: 5px; }
+        .header-title p { color: #666; font-size: 0.95rem; }
+
+        /* Navigation Bar */
+        nav { background-color: #007bff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .nav-menu { list-style: none; display: flex; flex-wrap: wrap; }
+        .nav-menu li { flex: 1 1 auto; text-align: center; }
+        .nav-menu li a { display: block; padding: 12px 20px; color: white; text-decoration: none; font-weight: 500; }
+        .nav-menu li a:hover, .nav-menu li a.active { background-color: #0056b3; }
+
+        /* Main Content */
+        .main-layout { display: flex; gap: 25px; margin: 25px auto; }
+        main { flex: 1; width: 100%; }
+        .page-title { background-color: white; padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #007bff; font-weight: bold; font-size: 1.2rem; }
+        .nutrition-card { background-color: white; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-top: 3px solid #007bff; }
+        .nutrition-card h3 { color: #007bff; margin-bottom: 12px; font-size: 1.15rem; }
+        .nutrition-card p { font-size: 0.95rem; color: #444; margin-bottom: 10px; }
+        .nutrition-card ul { margin-left: 20px; margin-top: 10px; font-size: 0.95rem; color: #444; }
+        .nutrition-card ul li { margin-bottom: 8px; }
+
+        /* Form BMI */
+        .bmi-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; }
+        .form-group { display: flex; flex-direction: column; gap: 5px; }
+        .form-group label { font-size: 0.9rem; font-weight: bold; color: #555; }
+        .form-group input { padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.95rem; outline: none; }
+        .form-group input:focus { border-color: #007bff; }
+        .btn-calc { grid-column: 1 / -1; background-color: #007bff; color: white; border: none; padding: 12px; border-radius: 6px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+        .btn-calc:hover { background-color: #0056b3; }
+        .bmi-result { margin-top: 20px; padding: 15px; background-color: #e9f3ff; border-radius: 8px; border-left: 4px solid #007bff; display: none; }
+        .bmi-result h4 { color: #007bff; font-size: 1.1rem; margin-bottom: 5px; }
+
+        footer { background-color: #333; color: white; text-align: center; padding: 18px 0; margin-top: 40px; }
+
+        /* 📱 Responsive Styles (สำหรับหน้าจอมือถือ) */
+        @media (max-width: 768px) {
+            .container { width: 95%; }
+            .header-content { flex-direction: column; text-align: center; gap: 10px; }
+            .logo-img { width: 70px; height: 70px; }
+            .header-title h1 { font-size: 1.4rem; }
+            .header-title p { font-size: 0.85rem; }
+
+            .nav-menu { flex-direction: column; }
+            .nav-menu li a { padding: 10px 15px; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+            .main-layout { margin: 15px auto; }
+            .page-title { font-size: 1.05rem; padding: 12px 15px; }
+            .nutrition-card { padding: 18px; }
+            .nutrition-card h3 { font-size: 1.05rem; }
+
+            .bmi-form { grid-template-columns: 1fr; }
+            .btn-calc { padding: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <img src="logo.png" alt="Logo" class="logo-img">
+            <div class="header-title">
+                <h1>เว็บไซต์แนะนำการออกกำลังกายและสุขภาพ</h1>
+                <p>รวมเคล็ดลับการออกกำลังกาย โปรแกรมฝึก และโภชนาการเพื่อสุขภาพที่ดี</p>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="index.html">หน้าแรก (Home)</a></li>
+                <li><a href="index2.html">ความรู้เกี่ยวกับการออกกำลังกาย</a></li>
+                <li><a href="index3.html">โปรแกรมการออกกำลังกาย</a></li>
+                <li><a href="index4.html" class="active">โภชนาการ&คำนวณ BMI</a></li>
+                <li><a href="index5.html">ติดต่อผู้จัดทำ</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container main-layout">
+        <main>
+            <div class="page-title">🥗 โภชนาการและการรับประทานอาหารเพื่อสุขภาพ</div>
+
+            <div class="nutrition-card">
+                <h3>1. อาหารหลัก 5 หมู่ที่ร่างกายควรได้รับ</h3>
+                <p>การรับประทานอาหารให้ครบทั้ง 5 หมู่ในสัดส่วนที่เหมาะสม ช่วยให้ร่างกายทำงานได้อย่างเต็มประสิทธิภาพและมีสุขภาพแข็งแรง:</p>
+                <ul>
+                    <li><strong>หมู่ที่ 1 โปรตีน (เนื้อสัตว์ ไข่ นม ถั่ว):</strong> ช่วยเสริมสร้างและซ่อมแซมกล้ามเนื้อและเนื้อเยื่อส่วนที่สึกหรอ</li>
+                    <li><strong>หมู่ที่ 2 คาร์โบไฮเดรต (ข้าว แป้ง เผือก มัน น้ำตาล):</strong> ให้พลังงานหลักแก่ร่างกายและสมองในการทำกิจกรรมประจำวัน</li>
+                    <li><strong>หมู่ที่ 3 เกลือแร่และแร่ธาตุ (ผักใบเขียวและผักต่างๆ):</strong> ช่วยเสริมสร้างภูมิคุ้มกัน ช่วยระบบขับถ่าย และทำให้ร่างกายทำงานเป็นปกติ</li>
+                    <li><strong>หมู่ที่ 4 วิตามิน (ผลไม้ชนิดต่างๆ):</strong> ช่วยบำรุงผิวพรรณ ป้องกันโรค และช่วยให้ระบบในร่างกายทำงานได้สมบูรณ์</li>
+                    <li><strong>หมู่ที่ 5 ไขมัน (ไขมันจากพืชและสัตว์):</strong> ให้ความอบอุ่นแก่ร่างกาย เป็นแหล่งพลังงานสำรอง และช่วยในการดูดซึมวิตามิน A, D, E, K</li>
+                </ul>
+            </div>
+
+            <div class="nutrition-card">
+                <h3>2. เครื่องคำนวณดัชนีมวลกาย (BMI Calculator)</h3>
+                <p>กรอกน้ำหนักและส่วนสูงของคุณ เพื่อประเมินภาวะความสมส่วนของร่างกาย:</p>
+                
+                <div class="bmi-form">
+                    <div class="form-group">
+                        <label for="weight">น้ำหนัก (กิโลกรัม):</label>
+                        <input type="number" id="weight" placeholder="เช่น 60" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="height">ส่วนสูง (เซนติเมตร):</label>
+                        <input type="number" id="height" placeholder="เช่น 170" min="1">
+                    </div>
+                    <button class="btn-calc" onclick="calculateBMI()">คำนวณ BMI</button>
+                </div>
+
+                <div id="bmiResult" class="bmi-result">
+                    <h4>ผลการคำนวณ BMI ของคุณ:</h4>
+                    <p>ค่า BMI: <strong id="bmiValue" style="color: #007bff; font-size: 1.2rem;">0</strong></p>
+                    <p>เกณฑ์สุขภาพ: <strong id="bmiStatus" style="color: #28a745;">-</strong></p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 เว็บไซต์ออกกำลังกายเพื่อสุขภาพ | จัดทำโดย นายรัฐศาสตร์ คอกสี</p>
+        </div>
+    </footer>
+
+    <script>
+        function calculateBMI() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const heightCm = parseFloat(document.getElementById('height').value);
+
+            if (!weight || !heightCm || weight <= 0 || heightCm <= 0) {
+                alert('กรุณากรอกข้อมูลน้ำหนักและส่วนสูงให้ถูกต้องครับ');
+                return;
+            }
+
+            const heightM = heightCm / 100;
+            const bmi = weight / (heightM * heightM);
+            const bmiFormatted = bmi.toFixed(1);
+
+            let status = '';
+            let color = '';
+
+            if (bmi < 18.5) {
+                status = 'น้ำหนักน้อย / ผอม';
+                color = '#ffc107';
+            } else if (bmi >= 18.5 && bmi <= 22.9) {
+                status = 'ปกติ (สมส่วน)';
+                color = '#28a745';
+            } else if (bmi >= 23.0 && bmi <= 24.9) {
+                status = 'ท้วม / น้ำหนักเกิน';
+                color = '#fd7e14';
+            } else if (bmi >= 25.0 && bmi <= 29.9) {
+                status = 'อ้วนระดับ 1';
+                color = '#dc3545';
+            } else {
+                status = 'อ้วนระดับ 2 (อ้วนมาก)';
+                color = '#bd2130';
+            }
+
+            document.getElementById('bmiValue').textContent = bmiFormatted;
+            const statusEl = document.getElementById('bmiStatus');
+            statusEl.textContent = status;
+            statusEl.style.color = color;
+
+            document.getElementById('bmiResult').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
