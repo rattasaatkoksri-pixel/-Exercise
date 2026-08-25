@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การคาร์ดิโอ - เว็บไซต์ออกกำลังกายและสุขภาพ</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Sarabun', sans-serif; }
+        body { background-color: #f4f6f9; color: #333; line-height: 1.6; }
+        .container { width: 92%; max-width: 1300px; margin: 0 auto; }
+        header { background-color: #ffffff; padding: 20px 0; border-bottom: 2px solid #e0e0e0; }
+        .header-content { display: flex; align-items: center; gap: 20px; }
+        .logo-img { width: 85px; height: 85px; object-fit: contain; border-radius: 50%; flex-shrink: 0; }
+        .header-title h1 { font-size: 1.8rem; color: #007bff; margin-bottom: 5px; }
+        .header-title p { color: #666; font-size: 0.95rem; }
+        
+        nav { background-color: #007bff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .nav-menu { list-style: none; display: flex; flex-wrap: wrap; }
+        .nav-menu li { flex: 1 1 auto; text-align: center; }
+        .nav-menu li a { display: block; padding: 12px 15px; color: white; text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+        .nav-menu li a:hover, .nav-menu li a.active { background-color: #0056b3; }
+        
+        .main-layout { display: flex; gap: 25px; margin: 25px auto; }
+        aside { flex: 1; max-width: 280px; background-color: white; padding: 20px; border-radius: 8px; height: fit-content; }
+        aside h3 { font-size: 1.1rem; color: #007bff; margin-bottom: 15px; border-bottom: 2px solid #007bff; padding-bottom: 5px; }
+        .sidebar-list { list-style: none; }
+        .sidebar-list li { padding: 12px 0; border-bottom: 1px dashed #eee; }
+        .sidebar-list li a { text-decoration: none; color: #555; display: block; transition: color 0.2s; }
+        .sidebar-list li a:hover, .sidebar-list li a.active { color: #007bff; font-weight: bold; }
+        main { flex: 3; }
+        .page-title { background-color: white; padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #007bff; font-weight: bold; font-size: 1.2rem; }
+        .content-card { background-color: white; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-top: 3px solid #007bff; }
+        .content-card h3 { color: #007bff; margin-bottom: 12px; font-size: 1.15rem; }
+        .content-card p { font-size: 0.95rem; color: #444; margin-bottom: 10px; }
+        .content-card ul { margin-left: 20px; font-size: 0.95rem; color: #444; }
+        .content-card ul li { margin-bottom: 8px; }
+        footer { background-color: #333; color: white; text-align: center; padding: 18px 0; margin-top: 40px; }
+
+        @media (max-width: 768px) {
+            .container { width: 95%; }
+            .header-content { flex-direction: column; text-align: center; gap: 10px; }
+            .nav-menu { flex-direction: column; }
+            .nav-menu li a { padding: 10px 15px; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .main-layout { flex-direction: column; }
+            aside { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <img src="logo.png" alt="Logo" class="logo-img">
+            <div class="header-title">
+                <h1>เว็บไซต์แนะนำการออกกำลังกายและสุขภาพ</h1>
+                <p>รวมเคล็ดลับการออกกำลังกาย โปรแกรมฝึก และโภชนาการเพื่อสุขภาพที่ดี</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="index.html">หน้าแรก (Home)</a></li>
+                <li><a href="index2.html" class="active">ความรู้เกี่ยวกับการออกกำลังกาย</a></li>
+                <li><a href="index3.html">โปรแกรมการออกกำลังกาย</a></li>
+                <li><a href="index4.html">โภชนาการ</a></li>
+                <li><a href="index9.html">คำนวณ BMI & TDEE</a></li>
+                <li><a href="index5.html">ติดต่อผู้จัดทำ</a></li>
+                <li><a href="index10.html">แหล่งอ้างอิง</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container main-layout">
+        <aside>
+            <h3>หมวดหมู่แนะนำ</h3>
+            <ul class="sidebar-list">
+                <li><a href="index6.html" class="active">• การคาร์ดิโอ (Cardio)</a></li>
+                <li><a href="index7.html">• การเวทเทรนนิ่ง (Weight Training)</a></li>
+                <li><a href="index8.html">• ยืดเหยียดกล้ามเนื้อ (Stretching)</a></li>
+            </ul>
+        </aside>
+        <main>
+            <div class="page-title">🏃‍♂️ การออกกำลังกายแบบคาร์ดิโอ (Cardio Exercise)</div>
+            <div class="content-card">
+                <h3>คาร์ดิโอคืออะไร?</h3>
+                <p>การออกกำลังกายแบบคาร์ดิโอ หรือ แอโรบิก เป็นการออกกำลังกายที่เน้นการกระตุ้นการทำงานของหัวใจและปอด ช่วยให้ระบบไหลเวียนโลหิตทำงานได้ดียิ่งขึ้น และช่วยเผาผลาญไขมันได้อย่างมีประสิทธิภาพ</p>
+                <ul>
+                    <li><strong>ตัวอย่างการเล่น:</strong> วิ่ง, ปั่นจักรยาน, ว่ายน้ำ, กระโดดเชือก, และเต้นแอโรบิก</li>
+                    <li><strong>ระยะเวลาที่แนะนำ:</strong> อย่างน้อย 150 นาทีต่อสัปดาห์ หรือวันละ 30 นาที 5 วันต่อสัปดาห์</li>
+                    <li><strong>ประโยชน์หลัก:</strong> เพิ่มความอึดของร่างกาย ลดความเสี่ยงโรคหัวใจ และช่วยควบคุมน้ำหนัก</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 เว็บไซต์ออกกำลังกายเพื่อสุขภาพ | แนะนำโดย นายรัฐศาสตร์ คอกสี</p>
+        </div>
+    </footer>
+</body>
+</html>
